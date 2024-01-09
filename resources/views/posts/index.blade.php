@@ -14,8 +14,11 @@
         @foreach ($posts as $post)
         
             <div class="post">
-            
-                <h2 class="title">{{ $post->title }}</h2>
+                
+                <div class="heading">
+                    <h2 class="title">{{ $post->title }}</h2>
+                    <p class="date">{{ $post->updated_at }}</p>
+                </div>
                 <p class="body">{{ $post->body }}</p>
     
             </div>

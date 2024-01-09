@@ -1,13 +1,38 @@
-.blog {
-     border-bottom: 2px solid;
-     padding-bottom: 10px;
+* {
+    box-sizing: border-box;
 }
+
+body {
+    margin: 0;
+    font-family: "Hiragino Kaku Gothic ProN";
+}
+
+a {
+    text-decoration: none;
+}
+
+
+
+.blog {
+    border-bottom: 2px solid;
+    padding-bottom: 10px;
+}
+
 
 .post {
     border-bottom: 2px solid;
     margin:5px 0;
 }
 
-.post h2 {
+.heading {
+    display: flex;
+    align-items: flex-end;
+}
+
+.title {
     font-weight: normal;
+}
+
+.date {
+    margin-left: auto;
 }
