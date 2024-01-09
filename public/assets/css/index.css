@@ -1,0 +1,13 @@
+.blog {
+     border-bottom: 2px solid;
+     padding-bottom: 10px;
+}
+
+.post {
+    border-bottom: 2px solid;
+    margin:5px 0;
+}
+
+.post h2 {
+    font-weight: normal;
+}
