@@ -16,4 +16,10 @@ class PostController extends Controller
 		//index内では変数"posts"と定義され、取得したデータを利用する
 		return view('posts/index')->with(["posts" => $post->getPaginateByLimit()]);
 	}
+	
+	//ルートパラメーターに代入されたidのテーブルデータがインスタンス化される
+	public function show(Post $post)
+	{
+		return view('posts/show')->with(["post" => $post]);
+	}
 }
