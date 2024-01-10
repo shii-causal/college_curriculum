@@ -12,6 +12,8 @@ class PostController extends Controller
 	//インポートしたPostをインスタンス化して$postとして使用
 	public function index(Post $post)
 	{
-		    return $post->get();
+		//index.blade.phpにコントローラーで取得したデータを渡す
+		//index内では変数"posts"と定義され、取得したデータを利用する
+		return view('posts/index')->with(["posts" => $post->getPaginateByLimit()]);
 	}
 }

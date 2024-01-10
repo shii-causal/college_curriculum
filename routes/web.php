@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PostController;    //追加
 
 /*
 |--------------------------------------------------------------------------
@@ -13,10 +14,5 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-use App\Http\Controllers\PostController;  //外部にあるPostControllerクラスをインポート。
-
-Route::get('/posts', [PostController::class, 'index']);   
+//Post一覧を表示
+Route::get('/', [PostController::class, 'index']);   
