@@ -23,7 +23,12 @@
     
             </div>
             
-        @endforeach    
+        @endforeach
+        
+        <div class="paginate">
+            <!--ページネーションの表示-->
+            {{ $posts->links() }}
+        </div>
             
     </div>
   </body>

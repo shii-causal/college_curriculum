@@ -14,6 +14,6 @@ class PostController extends Controller
 	{
 		//index.blade.phpにコントローラーで取得したデータを渡す
 		//index内では変数"posts"と定義され、取得したデータを利用する
-		return view('posts/index')->with(["posts" => $post->getByLimit()]);
+		return view('posts/index')->with(["posts" => $post->getPaginateByLimit()]);
 	}
 }

@@ -11,6 +11,10 @@ a {
     text-decoration: none;
 }
 
+li {
+    list-style: none;
+}
+
 
 
 .blog {
@@ -35,4 +39,12 @@ a {
 
 .date {
     margin-left: auto;
+}
+
+.paginate {
+    text-align: center;
+}
+
+.paginate li {
+    display: inline-block;
 }
