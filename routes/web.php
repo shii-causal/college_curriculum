@@ -15,7 +15,11 @@ use App\Http\Controllers\PostController;    //追加
 */
 
 //Post一覧を表示
-Route::get('/', [PostController::class, 'index']);   
+Route::get('/', [PostController::class, 'index']);
+
+//Post作成画面の表示
+//Post詳細画面が先だと、{poat}にcreateが代入されてエラーになる
+Route::get('/posts/create', [PostController::class, 'create']);
 
 //Post詳細画面の表示
 //{post}に対象データのidが代入される

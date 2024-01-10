@@ -9,6 +9,10 @@
   <body>
     <h1 class="blog">Blog Name</h1>
     
+    <div class="create">
+        <a href="posts/create">投稿する</a>
+    </div>
+    
     <div class="posts">
         
         @foreach ($posts as $post)

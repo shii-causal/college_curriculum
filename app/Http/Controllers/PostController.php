@@ -6,9 +6,9 @@ use Illuminate\Http\Request;
 use App\Models\Post;
 
 
-//Post一覧を表示する
 class PostController extends Controller
 {
+	//post一覧画面の表示
 	//インポートしたPostをインスタンス化して$postとして使用
 	public function index(Post $post)
 	{
@@ -17,9 +17,16 @@ class PostController extends Controller
 		return view('posts/index')->with(["posts" => $post->getPaginateByLimit()]);
 	}
 	
+	//Post詳細画面の表示
 	//ルートパラメーターに代入されたidのテーブルデータがインスタンス化される
 	public function show(Post $post)
 	{
 		return view('posts/show')->with(["post" => $post]);
+	}
+	
+	//Post作成画面の表示
+	public function create()
+	{
+		return view('posts/create');
 	}
 }
