@@ -44,4 +44,9 @@ class PostController extends Controller
 		return redirect('posts/'.$post->id);
 		
 	}
+	
+	//Post編集画面の表示
+	public function edit(Post $post) {
+		return view('posts/edit')->with(["post" => $post]);
+	}
 }

@@ -1,0 +1,41 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Hiragino Kaku Gothic ProN";
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+
+
+.blog {
+    border-bottom: 2px solid;
+    padding-bottom: 20px;
+}
+
+
+form {
+    margin:5px 0;
+}
+
+.error {
+    color: red;
+}
+
+body {
+    margin-top: 30px;
+}
+
+.return {
+    text-align: center;
+    margin-top: 30px;
+}

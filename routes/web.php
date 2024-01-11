@@ -27,3 +27,6 @@ Route::post('/posts', [PostController::class, 'store']);
 //Post詳細画面の表示
 //{post}に対象データのidが代入される
 Route::get('/posts/{post}', [PostController::class, 'show']);
+
+//Post編集画面の表示
+Route::get('/posts/{post}/edit', [PostController::class, 'edit']);
