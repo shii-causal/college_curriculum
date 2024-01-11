@@ -4,11 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Post;
+use App\Http\Requests\PostRequest;
 
 
-//Post一覧を表示する
 class PostController extends Controller
 {
+	//post一覧画面の表示
 	//インポートしたPostをインスタンス化して$postとして使用
 	public function index(Post $post)
 	{
@@ -17,9 +18,30 @@ class PostController extends Controller
 		return view('posts/index')->with(["posts" => $post->getPaginateByLimit()]);
 	}
 	
+	//Post詳細画面の表示
 	//ルートパラメーターに代入されたidのテーブルデータがインスタンス化される
 	public function show(Post $post)
 	{
 		return view('posts/show')->with(["post" => $post]);
+	}
+	
+	//Post作成画面の表示
+	public function create()
+	{
+		return view('posts/create');
+	}
+	
+	//Post作成画面の入力を受け取り、入力内容を確認してDBに保存する
+	public function store(PostRequest $request, Post $post)
+	{
+		//postsテーブルに登録
+		//作成画面で受け取った$post配列を$input配列に代入する
+		$input = $request['post'];
+		//Postテーブルにキーごとに追加する
+		$post->fill($input)->save();
+		
+		//作成したPostの表示
+		return redirect('posts/'.$post->id);
+		
 	}
 }

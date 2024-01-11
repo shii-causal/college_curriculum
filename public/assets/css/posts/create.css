@@ -17,34 +17,25 @@ li {
 
 
 
-.create {
+.blog {
     border-bottom: 2px solid;
-    padding-bottom: 10px;
+    padding-bottom: 20px;
 }
 
 
-.post {
-    border-bottom: 2px solid;
+form {
     margin:5px 0;
 }
 
-.heading {
-    display: flex;
-    align-items: flex-end;
+.error {
+    color: red;
 }
 
-.title {
-    font-weight: normal;
+body {
+    margin-top: 30px;
 }
 
-.date {
-    margin-left: auto;
-}
-
-.paginate {
+.return {
     text-align: center;
-}
-
-.paginate li {
-    display: inline-block;
+    margin-top: 30px;
 }
