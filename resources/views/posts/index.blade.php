@@ -26,6 +26,7 @@
                         <p class="date">{{ $post->updated_at }}</p>
                     </div>
                     <p class="body">{{ $post->body }}</p>
+                    <a href="/posts/{{ $post->id }}/edit">編集する</a>
     
                 </div>
             
