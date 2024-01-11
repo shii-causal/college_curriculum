@@ -7,6 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model
 {
+    //データの登録を可能にするカラムの指定
+    protected $fillable = [
+        'title',
+        'body',
+    ];
+    
     use HasFactory;
     
     public function getPaginateByLimit(int $limit_count = 5)

@@ -29,4 +29,17 @@ class PostController extends Controller
 	{
 		return view('posts/create');
 	}
+	
+	//Post作成画面の入力を受け取り、DBに保存する
+	public function store(Request $request, Post $post)
+	{
+		//postsテーブルに登録
+		//作成画面で受け取った$post配列を$input配列に代入する
+		$input = $request['post'];
+		//Postテーブルにキーごとに追加する
+		$post->fill($input)->save();
+		
+		//作成したPostの表示
+		return redirect('posts/'.$post->id);
+	}
 }
