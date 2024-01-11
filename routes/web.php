@@ -30,3 +30,6 @@ Route::get('/posts/{post}', [PostController::class, 'show']);
 
 //Post編集画面の表示
 Route::get('/posts/{post}/edit', [PostController::class, 'edit']);
+
+//Post編集画面の変更受け取り
+Route::put('/posts/{post}', [PostController::class, 'update']);

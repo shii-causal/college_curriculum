@@ -9,15 +9,27 @@
     <body>
         <h1 class="blog">Blog Name</h1>
     
-        <form action="/posts" method="POST">
+        <form action="/posts/{{ $post->id }}" method="POST">
 
             @csrf
-                
+            <!--PUTリクエストとして送信する-->
+            @method('PUT')    
             <p>タイトル</p>
             <input type="text" name="post[title]" placeholder="タイトル" value="{{ $post->title }}">
+            @if($errors->has('post.title'))
+                @foreach ($errors->get('post.title') as $error)
+                    <p class="error">{{ $error }}</p>
+                @endforeach
+            @endif
         
             <p class="body">本文</p>
-            <textarea name="post[body]" placeholder="本文" value="{{ $post->body }}"></textarea><br>
+            <!--textareaにvalueは設定できない-->
+            <textarea name="post[body]" placeholder="本文">{{ $post->body }}</textarea><br>
+            @if($errors->has('post.body'))
+                @foreach ($errors->get('post.body') as $error)
+                    <p class="error">{{ $error }}</p>
+                @endforeach
+            @endif
 
             <input class="post-submit" type="submit" value="保存">
         
