@@ -33,3 +33,6 @@ Route::get('/posts/{post}/edit', [PostController::class, 'edit']);
 
 //Post編集画面の変更受け取り
 Route::put('/posts/{post}', [PostController::class, 'update']);
+
+//Post一覧画面でPostを削除する
+Route::delete('/posts/{post}', [PostController::class, 'delete']);

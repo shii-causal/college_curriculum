@@ -46,7 +46,8 @@ class PostController extends Controller
 	}
 	
 	//Post編集画面の表示
-	public function edit(Post $post) {
+	public function edit(Post $post) 
+	{
 		return view('posts/edit')->with(["post" => $post]);
 	}
 	
@@ -58,4 +59,13 @@ class PostController extends Controller
 		$post->fill($input)->save();
 		return redirect('/posts/'.$post->id);
 	}
+	
+	//Postを削除する {
+	public function	delete(Post $post)
+	{
+		//Postのデータを論理削除する
+		$post->delete();
+		return redirect('/');
+	}
+
 }
