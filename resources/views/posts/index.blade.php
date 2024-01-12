@@ -27,6 +27,12 @@
                     </div>
                     <p class="body">{{ $post->body }}</p>
                     <a href="/posts/{{ $post->id }}/edit">編集する</a>
+                    
+                    <form action="/posts/{{ $post->id }}" id="form_{{ $post->id }}" method="POST">
+                        @csrf
+                        @method('DELETE')
+                        <button type="button" onclick="deletePost({{ $post->id }})">削除</button>
+                    </form>
     
                 </div>
             
@@ -37,7 +43,21 @@
             <!--ページネーションの表示-->
             {{ $posts->links() }}
         </div>
-            
+        
+        <!--削除ダイアログの表示-->
+        <script>
+            function deletePost(id) {
+                
+                //最新の方法で動作します
+                'use strict'
+
+                if (confirm('本当に削除しますか？')) {
+                    //フォームに送信する
+                    document.getElementById(`form_${id}`).submit();
+                }
+                
+            }
+        </script>
     </body>
   
 </html>
