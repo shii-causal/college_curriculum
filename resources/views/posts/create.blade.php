@@ -16,7 +16,7 @@
                 
             <p>タイトル</p>
             <!--サーバー側でpost配列のキー="title"として扱うことができる-->
-            <input type="text" name="post[title]" placeholder="タイトル" value="{{ old('post.title') }}">
+            <input type="text" name="post[title]" placeholder="タイトル" value="{{ old('post.title') }}"><br>
             <!--バリデーションエラーの表示-->
             @if($errors->has('post.title'))
                 @foreach ($errors->get('post.title') as $error)
@@ -31,6 +31,14 @@
                     <p class="error">{{ $error }}</p>
                 @endforeach
             @endif
+            
+            <p class="category">カテゴリー</p>
+            <select name="post[category_id]">
+                @foreach ($categories as $category)
+                    <option value="{{ $category->id }}">{{ $category->name }}</option>
+                @endforeach
+            </select><br>
+            
 
             <input class="post-submit" type="submit" value="投稿">
         
