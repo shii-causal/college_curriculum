@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;    //追加
+use App\Http\Controllers\CategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,3 +37,6 @@ Route::put('/posts/{post}', [PostController::class, 'update']);
 
 //Post一覧画面でPostを削除する
 Route::delete('/posts/{post}', [PostController::class, 'delete']);
+
+//カテゴリーごとにPost一覧を表示する
+Route::get('/categories/{category}', [CategoryController::class, 'index']);

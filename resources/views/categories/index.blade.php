@@ -47,6 +47,8 @@
             {{ $posts->links() }}
         </div>
         
+        <a href="/">投稿を全て表示する</a>
+        
         <!--削除ダイアログの表示-->
         <script>
             function deletePost(id) {

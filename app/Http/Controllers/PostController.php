@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Post;
 use App\Http\Requests\PostRequest;
+//カテゴリのデータ
+use App\Models\Category;
 
 
 class PostController extends Controller
@@ -26,9 +28,10 @@ class PostController extends Controller
 	}
 	
 	//Post作成画面の表示
-	public function create()
+	//カテゴリー選択一覧を表示する
+	public function create(Category $category)
 	{
-		return view('posts/create');
+		return view('posts/create')->with(["categories" => $category->get()]);
 	}
 	
 	//Post作成画面の入力を受け取り、入力内容を確認してDBに保存する
