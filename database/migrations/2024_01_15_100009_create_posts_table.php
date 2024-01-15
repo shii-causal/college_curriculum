@@ -15,7 +15,12 @@ return new class extends Migration
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
+            $table->string("title", 50);
+            $table->string("body", 200);
+            //作成日時と更新日時のカラムを追加
             $table->timestamps();
+            //論理削除日時のカラムを追加
+            $table->softDeletes();
         });
     }
 
