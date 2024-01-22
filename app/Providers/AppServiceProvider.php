@@ -28,6 +28,14 @@ class AppServiceProvider extends ServiceProvider
         
         // Paginator::useBootstrapFive();    　公式ドキュメント
         //または Paginator::useBootstrapFour();　　   公式ドキュメント
+        
+        
+        //URLをhttpに変更
+        \URL::forceScheme('https'); //追加
+        
+        //ページネーション等追加
+        \URL::forceScheme('https');
+        $this->app['request']->server->set('HTTPS','on');
     }
     
 }

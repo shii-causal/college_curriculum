@@ -6,6 +6,9 @@
         <link rel="stylesheet" href="{{ secure_asset('/assets/css/posts/index.css') }}">
     </head>
 
+    <!--headerの継承-->
+    <x-app-layout>
+        
     <body>
         <h1 class="blog">Blog Name</h1>
     
@@ -64,5 +67,7 @@
             }
         </script>
     </body>
+    
+    </x-app-layout>
   
 </html>

@@ -6,6 +6,12 @@
         <link rel="stylesheet" href="{{ secure_asset('/assets/css/posts/index.css') }}">
     </head>
 
+    <!--headerの継承-->
+    <x-app-layout>
+        <x-slot name="header">
+            Index
+        </x-slot>
+        
     <body>
         <h1 class="blog">Blog Name</h1>
     
@@ -47,6 +53,8 @@
             {{ $posts->links() }}
         </div>
         
+        <p>ログインユーザー：{{ Auth::user()->name }}</p>
+        
         <!--削除ダイアログの表示-->
         <script>
             function deletePost(id) {
@@ -62,5 +70,7 @@
             }
         </script>
     </body>
+    
+    </x-app-layout>
   
 </html>
